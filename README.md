@@ -5,7 +5,7 @@ MultiPDFSearcher is a React-based web application that allows users to search fo
 ## 🚀 Features
 - 🔍 **Search Across Multiple PDFs**: Enter a keyword to find matches in multiple PDF documents.
 - ⚡ **Real-Time Results**: Uses WebSockets to display search results instantly.
-- 🎨 **Modern UI**: Clean and responsive design using Tailwind CSS.
+- 🎨 **User-Friendly Interface**: Simple and clean UI.
 - 📄 **Results Overview**: Displays matched PDFs, page numbers, and snippets of text.
 
 ## 🛠️ Setup Instructions
@@ -63,7 +63,7 @@ uvicorn main:app --host 0.0.0.0 --port 8000
 ---
 
 ## 🎨 Technologies Used
-- **Frontend**: React, Tailwind CSS
+- **Frontend**: React, CSS
 - **Backend**: FastAPI (WebSocket Server)
 - **Communication**: WebSockets
 
