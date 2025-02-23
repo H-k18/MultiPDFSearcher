@@ -1,4 +1,4 @@
-/* Global Styles */
+/* General Styles */
 body {
   background: linear-gradient(135deg, #3b82f6, #9333ea);
   font-family: "Arial", sans-serif;
@@ -11,161 +11,130 @@ body {
   align-items: center;
 }
 
-/* Container */
-.app-container {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  width: 90%;
-  max-width: 500px;
+.app-title, h1 {
   text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
-/* Title */
-h1 {
-  font-size: 24px;
-  margin-bottom: 16px;
-}
-
-/* Search Box (Inline Input & Button) */
-.search-box {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-
-.search-box input {
-  flex: 1;
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  border-radius: 6px 0 0 6px;
-  outline: none;
-  background: white;
-  color: #333;
-}
-
-.search-box button {
-  background: #facc15;
-  color: #1e293b;
-  padding: 10px 16px;
-  font-size: 16px;
-  border: none;
-  border-radius: 0 6px 6px 0;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.search-box button:hover {
-  background: #fbbf24;
-}
-
-/* Results Section */
-.results-container {
-  text-align: left;
-  margin-top: 20px;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 15px;
-  border-radius: 8px;
-}
-
-.results-container h2 {
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.results-container ul {
-  list-style: none;
-  padding: 0;
-}
-
-.results-container li {
-  padding: 8px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.results-container li:last-child {
-  border-bottom: none;
-}
+/* Layout */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+  width: 90%;
+  max-width: 900px;
 }
 
+.upload-container,
+.pdf-list,
+.search-container,
+.results {
+  width: 100%;
+  text-align: center;
+}
+
+.upload-container input {
+  margin-bottom: 10px;
+}
+
+.columns {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+
+.upload-section, 
+.search-section {
+  flex: 1;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Search */
 .search-container {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
+  justify-content: center;
 }
 
-input {
+.search-container input {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 250px;
 }
 
-button {
+/* Buttons */
+button, 
+.download-button, 
+.delete-btn {
   padding: 10px 15px;
-  background-color: #007bff;
-  color: white;
   border: none;
   border-radius: 5px;
+  color: white;
   cursor: pointer;
+  font-size: 14px;
 }
 
-.results {
-  width: 80%;
+button {
+  background-color: #007bff;
 }
 
-h2 {
-  margin-bottom: 10px;
+button:hover {
+  background-color: #0056b3;
 }
 
-ul {
+.delete-btn {
+  background-color: #dc3545;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.download-button {
+  background-color: #28a745;
+  text-decoration: none;
+}
+
+.download-button:hover {
+  background-color: #218838;
+}
+
+/* Upload Message */
+.upload-message {
+  color: #facc15;
+  margin-top: 10px;
+}
+
+/* Uploaded PDFs Section */
+.pdf-list ul {
   list-style: none;
   padding: 0;
 }
 
-li {
-  border-bottom: 1px solid #ddd;
-  padding: 10px 0;
+.pdf-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
 }
 
-.download-button {
-  display: inline-block;
-  margin-left: 10px;
-  padding: 5px 10px;
-  background-color: #28a745;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  cursor: pointer;
-}
-/* Welcome message animation */
-.welcome-message {
-  text-align: center;
-  margin-top: 50px;
-}
-
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 2s ease-in-out forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Buttons inside PDF List */
+.pdf-buttons {
+  display: flex;
+  gap: 10px;
 }
