@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
-import "./App.css"; // Import the external CSS
+import "./App.css";
 
 export default function App() {
   const [keyword, setKeyword] = useState("");
   const [results, setResults] = useState([]);
   const [socket, setSocket] = useState(null);
-
-  useEffect(() => {
-    document.title = "MultiPDFSearcher";
-  }, []);
+  const [showWelcome, setShowWelcome] = useState(true);
+  const [searched, setSearched] = useState(false);
 
   useEffect(() => {
     const ws = new WebSocket("ws://localhost:8000/ws");
@@ -22,33 +20,55 @@ export default function App() {
 
   const handleSearch = () => {
     if (socket && keyword.trim()) {
-      setResults([]); // Clear previous results
+      setResults([]);
       socket.send(keyword);
+      setShowWelcome(false);
+      setSearched(true);
     }
   };
 
   return (
-    <div className="app-container">
-      <h1>PDF Keyword Search</h1>
+    <div className="container">
+      {/* Welcome Message with Animation */}
+      {showWelcome && (
+        <div className="welcome-message fade-in">
+          <h1>Welcome to MultiPDF Searcher</h1>
+          <p>Find keywords in multiple PDFs instantly!</p>
+        </div>
+      )}
 
-      {/* Input & Button in one line */}
-      <div className="search-box">
+      <h1 className="title">MultiPDF Searcher</h1>
+      <div className="search-container">
         <input
           type="text"
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
           placeholder="Enter a keyword..."
+          className="input-bounce"
         />
-        <button onClick={handleSearch}>Search</button>
+        <button onClick={handleSearch} className="pulse-button">
+          Search
+        </button>
       </div>
 
-      {/* Dynamic Results Heading */}
-      <div className="results-container">
-        <h2>{results.length > 0 ? "Results:" : "No Match Found"}</h2>
+      <div className="results">
+        {searched && results.length === 0 && (
+          <h2 className="shake">No Match Found</h2>
+        )}
+
+        {results.length > 0 && <h2 className="slide-in">Results:</h2>}
         <ul>
           {results.map((res, index) => (
-            <li key={index}>
+            <li key={index} className="fade-in">
               <strong>{res.pdf_name}</strong> - Page {res.page}: {res.snippet}
+              <a
+                href={res.download_url}
+                download
+                className="download-button"
+                target="_blank"
+              >
+                Download PDF
+              </a>
             </li>
           ))}
         </ul>
