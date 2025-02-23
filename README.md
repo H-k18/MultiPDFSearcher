@@ -60,7 +60,7 @@ uvicorn main:app --host 0.0.0.0 --port 8000
 ## 📸 Screenshots
 ![MultiPDFSearcher UI](frontend/assets/Homepage.png)
 ![MultiPDFSearcher UI](frontend/assets/Output1.png)
-![MultiPDFSearcher UI](frontend/assets/Output2.png)
+![MultiPDFSearcher UI](frontend/assets/output2.png)
 
 ---
 
