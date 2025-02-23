@@ -1,0 +1,92 @@
+/* Global Styles */
+body {
+  background: linear-gradient(135deg, #3b82f6, #9333ea);
+  font-family: "Arial", sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container */
+.app-container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Title */
+h1 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+/* Search Box (Inline Input & Button) */
+.search-box {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+  background: white;
+  color: #333;
+}
+
+.search-box button {
+  background: #facc15;
+  color: #1e293b;
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-box button:hover {
+  background: #fbbf24;
+}
+
+/* Results Section */
+.results-container {
+  text-align: left;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.results-container h2 {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.results-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.results-container li {
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.results-container li:last-child {
+  border-bottom: none;
+}
