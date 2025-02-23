@@ -103,8 +103,6 @@ export default function App() {
         </div>
       )}
 
-      <h1>MultiPDF Searcher</h1>
-
       <div className="upload-container">
         <input type="file" onChange={(e) => setFile(e.target.files[0])} />
         <button onClick={handleFileUpload}>Upload</button>
@@ -129,7 +127,8 @@ export default function App() {
           ))}
         </ul>
       </div>
-
+      
+      <h1>MultiPDF Searcher</h1>
       <div className="search-container">
         <input type="text" value={keyword} onChange={(e) => setKeyword(e.target.value)} placeholder="Enter a keyword..." />
         <button onClick={handleSearch}>Search</button>
